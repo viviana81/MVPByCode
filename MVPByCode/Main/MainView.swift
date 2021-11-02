@@ -38,6 +38,13 @@ class MainView: UIView {
         return button
     }()
     
+    var textfield: UITextField = {
+        let textfield = UITextField()
+        textfield.placeholder = "Ciaone"
+        textfield.backgroundColor = .lightGray
+        return textfield
+    }()
+    
     init() {
         super.init(frame: .zero)
         backgroundColor = .white
@@ -55,6 +62,7 @@ class MainView: UIView {
         addSubview(backgroundView)
         addSubview(changeButton)
         backgroundView.addSubview(mainLabel)
+        
     }
     
     func configureConstraints() {

@@ -155,14 +155,14 @@ class DelegationView: UIView {
             descriprionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
             
             mainStackView.topAnchor.constraint(equalTo: descriprionLabel.bottomAnchor, constant: 20),
-            mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            mainStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
+            mainStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
             
             sendButton.topAnchor.constraint(equalTo: mainStackView.bottomAnchor, constant: 20),
-            sendButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            sendButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+            sendButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
+            sendButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
             sendButton.heightAnchor.constraint(equalToConstant: 70),
-            sendButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -120)
+            sendButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -120)
             
             
         ])
