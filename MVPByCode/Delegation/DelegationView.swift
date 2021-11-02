@@ -40,8 +40,8 @@ class DelegationView: UIView {
         return label
     }()
     
-    var mainStackView: UIStackView = {
-        let stackView = UIStackView()
+   lazy var mainStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [nametxtField, surnametxtField, cardtxtField,emailtxtField, secondStackView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis  = .vertical
         stackView.distribution  = .equalSpacing
@@ -49,8 +49,8 @@ class DelegationView: UIView {
         return stackView
     }()
     
-    var secondStackView: UIStackView = {
-        let stackView = UIStackView()
+   lazy var secondStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [prefixTextField, phoneTxtField])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis  = .horizontal
         stackView.distribution  = .fillProportionally
@@ -135,13 +135,6 @@ class DelegationView: UIView {
         contentView.addSubview(cardtxtField)
         contentView.addSubview(emailtxtField)
         contentView.addSubview(mainStackView)
-        mainStackView.addArrangedSubview(nametxtField)
-        mainStackView.addArrangedSubview(surnametxtField)
-        mainStackView.addArrangedSubview(cardtxtField)
-        mainStackView.addArrangedSubview(emailtxtField)
-        secondStackView.addArrangedSubview(prefixTextField)
-        secondStackView.addArrangedSubview(phoneTxtField)
-        mainStackView.addArrangedSubview(secondStackView)
         contentView.addSubview(sendButton)
     }
     
