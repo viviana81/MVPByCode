@@ -22,8 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let main = MainViewController(presenter: pre)
         self.viewPresenter = pre
-        
-        window?.rootViewController = main
+        let navigation = UINavigationController(rootViewController: main)
+        window?.rootViewController = navigation
         window?.makeKeyAndVisible()
     }
 }
