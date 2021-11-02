@@ -44,7 +44,7 @@ class DelegationView: UIView {
         let stackView = UIStackView(arrangedSubviews: [nametxtField, surnametxtField, cardtxtField,emailtxtField, secondStackView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis  = .vertical
-        stackView.distribution  = .equalSpacing
+       stackView.distribution  = .fillProportionally
         stackView.spacing = 24
         return stackView
     }()
@@ -130,10 +130,6 @@ class DelegationView: UIView {
         scrollView.addSubview(contentView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(descriprionLabel)
-        contentView.addSubview(nametxtField)
-        contentView.addSubview(surnametxtField)
-        contentView.addSubview(cardtxtField)
-        contentView.addSubview(emailtxtField)
         contentView.addSubview(mainStackView)
         contentView.addSubview(sendButton)
     }
