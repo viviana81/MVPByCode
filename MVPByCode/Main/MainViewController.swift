@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class MainViewController: UIViewController {
     
@@ -33,10 +34,12 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         
-        presenter.reloadView = {
-            self.mainView?.mainLabel.text = self.presenter.labelText
-            self.mainView?.backgroundView.backgroundColor = self.presenter.backgroundColor
-            self.mainView?.changeButton.backgroundColor = self.presenter.changeButtonColor
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(openNext))
+        
+        presenter.reloadView =  { [weak self] in
+            self?.mainView?.mainLabel.text = self?.presenter.labelText
+            self?.mainView?.backgroundView.backgroundColor = self?.presenter.backgroundColor
+            self?.mainView?.changeButton.backgroundColor = self?.presenter.changeButtonColor
         }
     }
     
@@ -47,6 +50,13 @@ class MainViewController: UIViewController {
     @objc
     func changeColor() {
         presenter.switchColor()
+    }
+    
+    @objc
+    func openNext() {
+        let delPresenter = DelegationViewPresenter()
+        let delegation = DelegationViewController(presenter: delPresenter)
+        navigationController?.pushViewController(delegation, animated: true)
     }
 }
 
