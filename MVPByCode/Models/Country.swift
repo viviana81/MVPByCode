@@ -16,10 +16,35 @@ struct Country: Codable {
     let dialCode:String?
     
     var pickerTitle: String? {
-        guard let emoji = emoji, let dialCode = dialCode, let name = name else {
-            return ""
+        
+        var output = ""
+        
+        if let emoji = emoji {
+            output += emoji
         }
- 
-        return "\(emoji) (\(dialCode)) \(name)"
+        
+        if let dialCode = dialCode {
+            output += " (\(dialCode))"
+        }
+        
+        if let name = name {
+            output += " \(name)"
+        }
+        
+        return output
+    }
+    
+    var pickerDescription: String? {
+        
+        var output = ""
+        if let emoji = emoji {
+            output += emoji
+        }
+        
+        if let dialCode = dialCode {
+            output += " \(dialCode)"
+        }
+        
+        return output
     }
 }
