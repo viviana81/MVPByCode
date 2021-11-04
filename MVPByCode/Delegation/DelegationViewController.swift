@@ -24,6 +24,13 @@ class DelegationViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    lazy var countriesPicker: UIPickerView = {
+        let picker = UIPickerView()
+        picker.delegate = self
+        picker.dataSource = self
+        return picker
+    }()
     
     override func loadView() {
         view = DelegationView()
@@ -35,5 +42,33 @@ class DelegationViewController: UIViewController {
         
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: presenter.navigationButtonTitle, style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.tintColor = presenter.navigationButtonColor
+        delegationView?.prefixTextField.inputView = countriesPicker
+        
+    }
+}
+
+extension DelegationViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        let countries = presenter.countries
+        let filteredCountries = countries?.filter({ $0.dialCode != nil })
+        return filteredCountries?.count ?? 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        guard let countries = presenter.countries else { return nil }
+        let country = countries[row]
+        return country.pickerTitle
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        guard let countries = presenter.countries else { return }
+        let country = countries[row]
+        delegationView?.prefixTextField.text = country.pickerDescription
+        self.view.endEditing(true)
+        
     }
 }

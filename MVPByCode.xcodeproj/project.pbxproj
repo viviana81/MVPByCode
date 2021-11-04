@@ -17,6 +17,10 @@
 		B9899F6B2727EBF000029863 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9899F692727EBF000029863 /* LaunchScreen.storyboard */; };
 		B9899F732727EDAD00029863 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9899F722727EDAD00029863 /* MainView.swift */; };
 		B9899F752727F75500029863 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9899F742727F75500029863 /* Extensions+UIView.swift */; };
+		B9A6B1FB273297C9002E8ADB /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = B9A6B1FA273297C9002E8ADB /* countries.json */; };
+		B9A6B1FE27329996002E8ADB /* MockMapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A6B1FD27329996002E8ADB /* MockMapOperation.swift */; };
+		B9A6B200273299E3002E8ADB /* CountriesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A6B1FF273299E3002E8ADB /* CountriesStore.swift */; };
+		B9A6B20327329A05002E8ADB /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A6B20227329A05002E8ADB /* Country.swift */; };
 		B9AC58282728291C0058C026 /* ViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AC58272728291C0058C026 /* ViewPresenter.swift */; };
 		B9BCD24F27313603005E8B8E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BCD24E27313603005E8B8E /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +38,10 @@
 		B9899F6C2727EBF000029863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9899F722727EDAD00029863 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B9899F742727F75500029863 /* Extensions+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
+		B9A6B1FA273297C9002E8ADB /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		B9A6B1FD27329996002E8ADB /* MockMapOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMapOperation.swift; sourceTree = "<group>"; };
+		B9A6B1FF273299E3002E8ADB /* CountriesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesStore.swift; sourceTree = "<group>"; };
+		B9A6B20227329A05002E8ADB /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		B9AC58272728291C0058C026 /* ViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresenter.swift; sourceTree = "<group>"; };
 		B9BCD24E27313603005E8B8E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,7 +73,6 @@
 				B94685EB272BF91B00A74DA9 /* DelegationViewController.swift */,
 				B94685ED272BF96E00A74DA9 /* DelegationView.swift */,
 				B94685EF272BF9A300A74DA9 /* DelegationViewPresenter.swift */,
-				B9BCD24E27313603005E8B8E /* CustomTextField.swift */,
 			);
 			path = Delegation;
 			sourceTree = "<group>";
@@ -104,6 +111,9 @@
 		B9899F5D2727EBED00029863 /* MVPByCode */ = {
 			isa = PBXGroup;
 			children = (
+				B9A6B2042732CE89002E8ADB /* Utilities */,
+				B9A6B201273299F6002E8ADB /* Models */,
+				B9A6B1F92732979E002E8ADB /* MVPData */,
 				B94685F4272BF9EC00A74DA9 /* Extensions */,
 				B94685F3272BF9CB00A74DA9 /* Scene */,
 				B94685F2272BF9BE00A74DA9 /* Delegation */,
@@ -115,6 +125,32 @@
 				B9899F6C2727EBF000029863 /* Info.plist */,
 			);
 			path = MVPByCode;
+			sourceTree = "<group>";
+		};
+		B9A6B1F92732979E002E8ADB /* MVPData */ = {
+			isa = PBXGroup;
+			children = (
+				B9A6B1FA273297C9002E8ADB /* countries.json */,
+			);
+			path = MVPData;
+			sourceTree = "<group>";
+		};
+		B9A6B201273299F6002E8ADB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B9A6B20227329A05002E8ADB /* Country.swift */,
+				B9A6B1FF273299E3002E8ADB /* CountriesStore.swift */,
+				B9A6B1FD27329996002E8ADB /* MockMapOperation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B9A6B2042732CE89002E8ADB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B9BCD24E27313603005E8B8E /* CustomTextField.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9A6B1FB273297C9002E8ADB /* countries.json in Resources */,
 				B9899F6B2727EBF000029863 /* LaunchScreen.storyboard in Resources */,
 				B9899F682727EBF000029863 /* Assets.xcassets in Resources */,
 			);
@@ -191,9 +228,12 @@
 				B94685F0272BF9A300A74DA9 /* DelegationViewPresenter.swift in Sources */,
 				B9899F732727EDAD00029863 /* MainView.swift in Sources */,
 				B9899F5F2727EBED00029863 /* AppDelegate.swift in Sources */,
+				B9A6B20327329A05002E8ADB /* Country.swift in Sources */,
 				B9BCD24F27313603005E8B8E /* CustomTextField.swift in Sources */,
 				B94685EC272BF91B00A74DA9 /* DelegationViewController.swift in Sources */,
+				B9A6B1FE27329996002E8ADB /* MockMapOperation.swift in Sources */,
 				B9AC58282728291C0058C026 /* ViewPresenter.swift in Sources */,
+				B9A6B200273299E3002E8ADB /* CountriesStore.swift in Sources */,
 				B9899F612727EBED00029863 /* SceneDelegate.swift in Sources */,
 				B94685EE272BF96E00A74DA9 /* DelegationView.swift in Sources */,
 				B9899F752727F75500029863 /* Extensions+UIView.swift in Sources */,

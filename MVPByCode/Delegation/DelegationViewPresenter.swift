@@ -10,6 +10,8 @@ import UIKit
 
 class DelegationViewPresenter {
     
+    var countries: [Country]?
+    
     var navigationTitle: String {
         
         return "mylime"
@@ -21,5 +23,9 @@ class DelegationViewPresenter {
     
     var navigationButtonTitle: String {
         return ""
+    }
+    
+    init() {
+        countries = CountriesStore.shared.countries
     }
 }
